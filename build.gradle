@@ -1,0 +1,30 @@
+import com.sun.tools.javac.Main
+
+plugins {
+    id 'groovy'
+    id 'java'
+    id "io.freefair.lombok" version "6.4.3"
+}
+
+group 'com.anirban'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy-all:3.0.5'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.anirban.Main'
+    }
+}
